@@ -1,0 +1,183 @@
+.site-header {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  color: var(--cream);
+  border-bottom: 1px solid rgba(216, 181, 106, 0.12);
+  transition: background-color 250ms ease, box-shadow 250ms ease, backdrop-filter 250ms ease;
+}
+
+.site-header.is-scrolled {
+  position: fixed;
+  background: rgba(53, 12, 21, 0.91);
+  box-shadow: 0 10px 35px rgba(20, 3, 7, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  width: min(calc(100% - 42px), 1320px);
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.brand img {
+  width: 176px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.main-nav,
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  gap: clamp(20px, 2.2vw, 34px);
+}
+
+.nav-links {
+  gap: clamp(15px, 1.8vw, 29px);
+}
+
+.nav-links a {
+  position: relative;
+  padding: 31px 0 28px;
+  color: rgba(247, 240, 223, 0.76);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+  transition: color 180ms ease;
+}
+
+.nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 21px;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+  color: var(--white);
+}
+
+.nav-links a:hover::after,
+.nav-links a.is-active::after {
+  transform: scaleX(1);
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  background: transparent;
+  border: 1px solid rgba(216, 181, 106, 0.38);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 800;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 18px;
+  color: #fff;
+  background: #167d49;
+  border-radius: 999px;
+  box-shadow: 0 14px 35px rgba(9, 71, 39, 0.28);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.whatsapp-float:hover {
+  background: #11673c;
+  transform: translateY(-3px);
+}
+
+.whatsapp-float svg {
+  width: 21px;
+  height: 21px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(88, 21, 35, 0.17);
+}
+
+.accordion-item:first-child {
+  border-top: 1px solid rgba(88, 21, 35, 0.17);
+}
+
+.accordion-item h3 {
+  margin: 0;
+}
+
+.accordion-item button {
+  display: grid;
+  width: 100%;
+  min-height: 88px;
+  grid-template-columns: 36px 1fr 24px;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  color: var(--wine-deep);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-item button > span {
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.accordion-item button svg {
+  transition: transform 220ms ease;
+}
+
+.accordion-item.is-open button svg {
+  transform: rotate(180deg);
+}
+
+.accordion-panel p {
+  max-width: 610px;
+  margin: -5px 38px 26px 51px;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  line-height: 1.8;
+}
